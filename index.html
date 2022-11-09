@@ -1,0 +1,57 @@
+  <!doctype html>
+
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      model-viewer{
+        width: 400px;
+        height: 600px;
+        margin:0 auto;
+      }
+
+      model-viewer::part(default-ar-button){
+        left:50%;
+        background-color: beige;
+      }
+      .controls {
+      position: absolute;
+      display: flex;  
+      flex-direction: column;
+      align-items: left;
+      left: 8px;
+      top: 80px;
+      }
+
+      model-viewer[ar-status="session-started"] > #ar-prompt{
+        display: block;
+      }
+
+      #btn1{
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <body>
+    <model-viewer
+    id="color"
+    src="../assets/chair.glb" 
+    camera-controls
+    alt="chair" 
+    ar
+    autoplay
+    ar-modes="webxr scene-viewer quick-look"
+    >
+
+    <div class="controls",="" id="color-controls">
+      <button id="btn1" data-color="2,0,0,1">Red</button>
+      <button id="btn1" data-color="0,1,0,1">Green</button>
+      <button id="btn1" data-color="0,0,2,1">Blue</button>
+      <button id="btn1" data-color="1,1,1,1">Default</button>
+    </div>
+    </model-viewer>
+  </body>
+  <script src="color.js"></script>
+  </html>
